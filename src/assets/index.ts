@@ -1,4 +1,4 @@
 export * from './resume';
 export * from './skills';
-import photo from './photo4.png';
+import photo from './photo.png';
 export default photo;

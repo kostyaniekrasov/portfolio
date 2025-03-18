@@ -202,8 +202,6 @@ const Work = () => {
     setProject(projects[currentIndex]);
   };
 
-  const currentIndex = projects.findIndex((p) => p.title === project.title);
-
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -236,12 +234,8 @@ const Work = () => {
               }}
               className="flex flex-col gap-[30px]"
             >
-              <div className="flex flex-wrap items-center justify-between">
-                <div className="text-outline text-8xl leading-none font-extrabold text-transparent">
-                  {currentIndex + 1}
-                </div>
-
-                <div className="text-outline text-6xl leading-none font-extrabold text-transparent">
+              <div className="flex flex-wrap items-center gap-2">
+                <div className="text-outline text-7xl leading-none font-extrabold text-transparent">
                   {project.title}
                 </div>
               </div>
@@ -307,7 +301,7 @@ const Work = () => {
             <Swiper
               spaceBetween={30}
               slidesPerView={1}
-              className="mb-12 xl:h-[520px]"
+              className="mb-12 rounded-xl xl:h-[520px]"
               onSlideChange={handleSlideChange}
             >
               {projects.map((project) => {

@@ -80,9 +80,9 @@ const Contact = () => {
 
   const onSubmit = async (data: FormData) => {
     setIsLoading(true);
-    const TELEGRAM_API_URL = `https://api.telegram.org/bot${process.env.NEXT_PUBLIC_TELEGRAM_BOT_TOKEN}/sendMessage`;
+    // const TELEGRAM_API_URL = `https://api.telegram.org/bot${process.env.NEXT_PUBLIC_TELEGRAM_BOT_TOKEN}/sendMessage`;
 
-    const message = `Ім'я: ${data.firstname + ' ' + data.lastname}\nEmail: ${data.email}\nТелефон: ${data.phone}\nПовідомлення: ${data.message}`;
+    // const message = `Ім'я: ${data.firstname + ' ' + data.lastname}\nEmail: ${data.email}\nТелефон: ${data.phone}\nПовідомлення: ${data.message}`;
 
     const response = await fetch(
       'https://formsubmit.co/05838c1618604d4a3a5ee47fca1ef53a',
@@ -93,17 +93,17 @@ const Contact = () => {
       },
     ).finally(() => setIsLoading(false));
 
-    await fetch(TELEGRAM_API_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        chat_id: process.env.NEXT_PUBLIC_CHAT_ID,
-        text: message,
-      }),
-    })
-      .then((response) => response.json())
-      .then((data) => console.log(data))
-      .catch((error) => console.log('Error:', error));
+    // await fetch(TELEGRAM_API_URL, {
+    //   method: 'POST',
+    //   headers: { 'Content-Type': 'application/json' },
+    //   body: JSON.stringify({
+    //     chat_id: process.env.NEXT_PUBLIC_CHAT_ID,
+    //     text: message,
+    //   }),
+    // })
+    //   .then((response) => response.json())
+    //   .then((data) => console.log(data))
+    //   .catch((error) => console.log('Error:', error));
     if (response.ok) {
       addAlert(
         'The letter has been sent successfully, I will contact you soon.',
@@ -147,10 +147,7 @@ const Contact = () => {
               <h3 className="text-accent text-4xl">Lets work together</h3>
 
               <p className="text-white/60">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit
-                dolorum quaerat ipsam accusamus! Iste molestias suscipit ipsum,
-                excepturi est, accusamus, tempora sit laborum beatae nesciunt
-                nam unde quaerat sint facere.
+                Fill out the form and I will contact you as soon as possible.
               </p>
 
               <div className="grid grid-cols-1 gap-8 md:grid-cols-2">

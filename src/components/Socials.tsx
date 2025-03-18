@@ -4,7 +4,7 @@ import { FaLinkedinIn, FaGithub, FaTelegram } from 'react-icons/fa';
 const socials = [
   {
     icon: <FaLinkedinIn />,
-    path: 'www.linkedin.com/in/kostiantyn-niekrasov',
+    path: 'https://www.linkedin.com/in/kostiantyn-niekrasov',
   },
   {
     icon: <FaGithub />,
@@ -30,6 +30,7 @@ const Socials = ({ containerStyles, iconStyles }: Props) => {
             key={social.path}
             href={social.path}
             className={iconStyles}
+            target="_blank"
           >
             {social.icon}
           </Link>
